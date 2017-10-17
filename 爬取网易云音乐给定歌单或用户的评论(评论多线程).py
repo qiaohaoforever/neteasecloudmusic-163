@@ -157,7 +157,7 @@ def get_the_first_half_comment(id,comments_sum,music_name):
         #"isRemoveHotComment":false}],"total":1,"more":false}
             user_id = comment['user']['userId']
              # 如果该歌曲中的评论有目标用户(user_id)则把目标用户的评论信息保存到数据库
-            if user_id == 454989112:
+            if user_id == 48353:    #网易UFO丁磊
                 user_name = comment['user']['nickname']
                 comment = comment['content']
                 print(music_name, '——', ':', comment)
@@ -190,7 +190,7 @@ def get_the_second_half_comment(id,comments_sum,music_name):
         json_comment = json_dict['comments']
         for comment in json_comment:
             user_id = comment['user']['userId']
-            if user_id == 454989112:
+            if user_id == 48353:    #网易UFO丁磊
                 user_name = comment['user']['nickname']
                 comment = comment['content']
                 page=-(comments_sum // 20 + 1 - raw_page)+half_page
@@ -222,7 +222,7 @@ index = 0 # 用于每爬取1500页(30000条评论)sleep一下
 
 def get_music_info():
     num = 0 # 计量爬行总评论数
-    params = {'id': 692768001} # 907742221
+    params = {'id': 907742221}
     r = requests.get('http://music.163.com/playlist',params=params,headers=raw_headers)
     #proxies=random.choice(raw_proxy_pool)
 
