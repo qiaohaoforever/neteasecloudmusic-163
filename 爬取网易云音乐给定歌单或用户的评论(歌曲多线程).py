@@ -174,7 +174,7 @@ def get_comment(music_id,song_name):
     #"isRemoveHotComment":false}],"total":1,"more":false}
                 user_id = comment['user']['userId']
                  # 如果该歌曲中的评论有目标用户(user_id)则把目标用户的评论信息保存到数据库
-                if user_id == 77923197:
+                if user_id == 48353:#网易UFO丁磊
                     user_name = comment['user']['nickname']
                     comments = comment['content']
                     print(song_name, '——', ':', comments)
@@ -214,7 +214,7 @@ num = 0 # 计量爬行总评论数
 def get_music_info():
     music_id=[] # music_id的列表集
     music_name=[] ## music_name的列表集
-    playlist_id = {'id': 85892679} # 907742221
+    playlist_id = {'id': 907742221}
     r = requests.get('http://music.163.com/playlist',params=playlist_id,headers=raw_headers)
         #proxies=random.choice(raw_proxy_pool)  
 
